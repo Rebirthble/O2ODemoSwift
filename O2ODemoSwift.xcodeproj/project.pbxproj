@@ -209,6 +209,12 @@
 				TargetAttributes = {
 					AEEB7A3F1C1BD59C002E10F1 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = NR5K58XN93;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					AEEB7A531C1BD59C002E10F1 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -418,6 +424,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -426,6 +434,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nifty.cloud.mb.O2ODemoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ee7ecc9d-9a68-49bb-9e78-71ec999c5632";
 				SWIFT_OBJC_BRIDGING_HEADER = "./O2ODemoSwift/O2ODemoSwift-Bridging-Header.h";
 			};
 			name = Debug;
@@ -434,6 +443,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -442,6 +453,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nifty.cloud.mb.O2ODemoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ee7ecc9d-9a68-49bb-9e78-71ec999c5632";
 				SWIFT_OBJC_BRIDGING_HEADER = "./O2ODemoSwift/O2ODemoSwift-Bridging-Header.h";
 			};
 			name = Release;

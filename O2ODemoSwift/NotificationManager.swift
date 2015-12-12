@@ -24,7 +24,6 @@ public class NotificationManager: NSObject, CLLocationManagerDelegate {
     
     func searchLocation (locationId: String, callback:(NSError?)->Void) {
         print("locationId: " + locationId)
-        callback(NSError(domain: "com.nifty.cloud.mb", code: 1, userInfo: ["message":"fuu error"]))
         
         let location = NCMBObject(className: "Location")
         location.objectId = locationId
@@ -61,6 +60,8 @@ public class NotificationManager: NSObject, CLLocationManagerDelegate {
         notification.region = region
         notification.regionTriggersOnce = true
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+        callback(nil)
         
     }
 }

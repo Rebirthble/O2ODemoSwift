@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var manager : NotificationManager = NotificationManager.init()
     
     @IBAction func setLocation(sender: AnyObject) {
-        let locationId = "LOCATION_ID"
+        let locationId = "YOUR_LOCATION_ID"
         let callback = {(error: NSError?) -> Void in
             if ((error) != nil) {
                 print("error: " + (error?.description)!)
