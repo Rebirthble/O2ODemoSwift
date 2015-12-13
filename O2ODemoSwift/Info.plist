@@ -26,6 +26,7 @@
 	<string>位置情報に基づくセール情報をお届けします</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
