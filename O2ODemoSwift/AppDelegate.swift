@@ -27,16 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
             
         //プッシュ通知のタイプを設定
-        let settings = UIUserNotificationSettings.init(
-            forTypes: [.Alert, .Badge, .Sound],
-            categories: nil
-        )
+
         
         //プッシュ通知の設定をアプリに登録して、許可画面を表示する
-        application.registerUserNotificationSettings(settings)
+
             
         //リモートプッシュ通知を受信するためのdeviceTokenを要求する
-        application.registerForRemoteNotifications()
+
         
         return true
     }
@@ -70,19 +67,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         //新規でNCMBInstallationのインスタンスを作成
         //または、保存済みの端末情報の取得
-        let installation = NCMBInstallation.currentInstallation()
+
         
         //deviceTokenを設定
-        installation.setDeviceTokenFromData(deviceToken)
+
         
         //端末情報の保存または更新
-        installation.saveInBackgroundWithBlock { (error : NSError!) -> Void in
-            if ((error) != nil) {
-                print ("installation is not saved: " + (error).description)
-            } else {
-                print ("installation is saved.")
-            }
-        }
+ 
     }
     
     //リモートプッシュ通知を受信すると呼び出される
@@ -92,22 +83,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         
         //ペイロードからlocationIdを取得
-        let locationId = userInfo["locationId"] as! String
+
         
-            
-        if (!locationId.isEmpty) {
-            
-            //位置情報の検索と、Location Notificationの再設定
-            manager.searchLocation(
-                locationId,
-                callback: { (error: NSError?) -> Void in
-                    
-                if ((error) != nil) {
-                    print ("error: " + ((error)?.description)!)
-                }
-                completionHandler(.NewData)
-            })
-        }
+        //locationIdが有効かをチェック
+
     }
 
 
