@@ -15,16 +15,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var manager : NotificationManager = NotificationManager.init()
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(
+        application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        //SDKの初期化
         NCMB.setApplicationKey(
             "YOUR_APPLICATION_KEY",
             clientKey: "YOUR_CLIENT_KEY"
         )
+            
+        //プッシュ通知のタイプを設定
+        let settings = UIUserNotificationSettings.init(
+            forTypes: [.Alert, .Badge, .Sound],
+            categories: nil
+        )
         
-        let settings = UIUserNotificationSettings.init(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        //プッシュ通知の設定をアプリに登録して、許可画面を表示する
         application.registerUserNotificationSettings(settings)
+            
+        //リモートプッシュ通知を受信するためのdeviceTokenを要求する
         application.registerForRemoteNotifications()
         
         return true
@@ -52,11 +63,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    //deviceToken がAPNsから発行されるとタイミングで呼び出される
+    func application(
+        application: UIApplication,
+        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+            
+        //新規でNCMBInstallationのインスタンスを作成
+        //または、保存済みの端末情報の取得
         let installation = NCMBInstallation.currentInstallation()
         
+        //deviceTokenを設定
         installation.setDeviceTokenFromData(deviceToken)
         
+        //端末情報の保存または更新
         installation.saveInBackgroundWithBlock { (error : NSError!) -> Void in
             if ((error) != nil) {
                 print ("installation is not saved: " + (error).description)
@@ -66,12 +85,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        print ("notification received.")
+    //リモートプッシュ通知を受信すると呼び出される
+    func application(
+        application: UIApplication,
+        didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
+        fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        
+        //ペイロードからlocationIdを取得
         let locationId = userInfo["locationId"] as! String
         
+            
         if (!locationId.isEmpty) {
-            manager.searchLocation(locationId, callback: { (error: NSError?) -> Void in
+            
+            //位置情報の検索と、Location Notificationの再設定
+            manager.searchLocation(
+                locationId,
+                callback: { (error: NSError?) -> Void in
+                    
                 if ((error) != nil) {
                     print ("error: " + ((error)?.description)!)
                 }
