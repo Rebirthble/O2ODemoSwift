@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AEC94DDD1C1C32D000C60C10 /* NCMB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC94DDC1C1C32D000C60C10 /* NCMB.framework */; settings = {ASSET_TAGS = (); }; };
+		AEC94DDD1C1C32D000C60C10 /* NCMB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC94DDC1C1C32D000C60C10 /* NCMB.framework */; };
 		AEEB7A441C1BD59C002E10F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB7A431C1BD59C002E10F1 /* AppDelegate.swift */; };
 		AEEB7A461C1BD59C002E10F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB7A451C1BD59C002E10F1 /* ViewController.swift */; };
 		AEEB7A491C1BD59C002E10F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEEB7A471C1BD59C002E10F1 /* Main.storyboard */; };
@@ -15,7 +15,7 @@
 		AEEB7A4E1C1BD59C002E10F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEEB7A4C1C1BD59C002E10F1 /* LaunchScreen.storyboard */; };
 		AEEB7A591C1BD59C002E10F1 /* O2ODemoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB7A581C1BD59C002E10F1 /* O2ODemoSwiftTests.swift */; };
 		AEEB7A641C1BD59C002E10F1 /* O2ODemoSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB7A631C1BD59C002E10F1 /* O2ODemoSwiftUITests.swift */; };
-		AEEB7A721C1BD6D3002E10F1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB7A711C1BD6D3002E10F1 /* NotificationManager.swift */; settings = {ASSET_TAGS = (); }; };
+		AEEB7A721C1BD6D3002E10F1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB7A711C1BD6D3002E10F1 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -434,7 +434,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nifty.cloud.mb.O2ODemoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ee7ecc9d-9a68-49bb-9e78-71ec999c5632";
+				PROVISIONING_PROFILE = "d921e4be-a64d-41a7-bd33-03d7f5d80dbe";
 				SWIFT_OBJC_BRIDGING_HEADER = "./O2ODemoSwift/O2ODemoSwift-Bridging-Header.h";
 			};
 			name = Debug;
@@ -453,7 +453,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nifty.cloud.mb.O2ODemoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ee7ecc9d-9a68-49bb-9e78-71ec999c5632";
+				PROVISIONING_PROFILE = "d921e4be-a64d-41a7-bd33-03d7f5d80dbe";
 				SWIFT_OBJC_BRIDGING_HEADER = "./O2ODemoSwift/O2ODemoSwift-Bridging-Header.h";
 			};
 			name = Release;

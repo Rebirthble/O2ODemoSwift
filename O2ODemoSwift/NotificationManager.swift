@@ -40,7 +40,7 @@ public class NotificationManager: NSObject, CLLocationManagerDelegate {
         //設定されたobjectIdをもとに、データストアからデータを取得
         location.fetchInBackgroundWithBlock { (error: NSError!) -> Void in
             if ((error) != nil) {
-                print ((error).description)
+                callback(error)
             } else {
                 
                 //取得した位置情報をpointに設定

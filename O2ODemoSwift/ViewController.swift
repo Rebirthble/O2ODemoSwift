@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         let locationId = "YOUR_LOCATION_ID"
         let callback = {(error: NSError?) -> Void in
             if ((error) != nil) {
-                print("error: " + (error?.description)!)
+                print("error: \(error?.localizedDescription)")
             } else {
                 print("no error!")
             }
