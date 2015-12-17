@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //端末情報の保存または更新
         installation.saveInBackgroundWithBlock { (error : NSError!) -> Void in
             if ((error) != nil) {
-                print ("installation is not saved: " + (error).description)
+                print("error: \(error?.localizedDescription)")
             } else {
                 print ("installation is saved.")
             }
@@ -103,7 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 callback: { (error: NSError?) -> Void in
                     
                 if ((error) != nil) {
-                    print ("error: " + ((error)?.description)!)
+                    print("error: \(error?.localizedDescription)")
                 }
                 completionHandler(.NewData)
             })
