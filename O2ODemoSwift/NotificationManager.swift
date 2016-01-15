@@ -58,6 +58,7 @@ public class NotificationManager: NSObject, CLLocationManagerDelegate {
     func setLocationNotification (point : NCMBGeoPoint , callback : (NSError?)->Void) {
         
         //以前に登録されたLocation Notificationをすべてキャンセル
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
 
         //Notificationの再作成
 
