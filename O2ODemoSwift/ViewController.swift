@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     
     //ボタンが押された時の処理
     @IBAction func setLocation(sender: AnyObject) {
-        let locationId = "YOUR_LOCATION_ID"
+        
+        let locationId = "YOUR_LOCATION_ID"   //★LocationクラスのobjectIdに書き換え
         let callback = {(error: NSError?) -> Void in
             if ((error) != nil) {
                 print("error: \(error?.localizedDescription)")
