@@ -34,6 +34,24 @@ public class NotificationManager: NSObject, CLLocationManagerDelegate {
 
         
         //設定されたobjectIdをもとに、データストアからデータを取得
+        location.fetchInBackgroundWithBlock { (error: NSError!) -> Void in
+            if ((error) != nil) {
+                callback(error)
+            } else {
+                //取得した位置情報をpointに設定
+                let point : NCMBGeoPoint = location.objectForKey("geo") as! NCMBGeoPoint
+                //Location Notificationを再設定
+                self.setLocationNotification(
+                    point,
+                    callback: { (error : NSError?) -> Void in
+                        if ((error) != nil) {
+                            callback(error)
+                        } else {
+                            callback(nil)
+                        }
+                })
+            }
+        }
 
     }
     
